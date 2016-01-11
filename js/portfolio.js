@@ -16,7 +16,7 @@ $('.headshot').on('click', function() {
 });
 var portfolio = {
 	projects: []
-}
+};
 portfolio.rawData = [
 	{
 		title: 'REI Digital Catalog',
