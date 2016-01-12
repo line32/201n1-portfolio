@@ -16,10 +16,10 @@ $('.headshot').on('click', function() {
 });
 var portfolio = {
 	projects: []
-}
+};
 portfolio.rawData = [
 	{
-		title: 'REI Digital Catalog',
+		title: 'REI Digital Catalog1',
 		url: 'http://reitrips.com/#&panel1-3',
 		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
 		icon: 'images/rei.jpg'
@@ -45,12 +45,21 @@ function Project(title, url, description, icon) {
 }
 
 Project.prototype.toHTML = function() {
+	var artHTML = $('article.template').clone();
+	artHTML.removeClass('template');
+	artHTML.find('img').attr('src', this.icon);
+	artHTML.find('h3 > a').attr('href', this.url);
+	artHTML.find('h3').html(this.title);
+	artHTML.find('p').html(this.description);
+	artHTML.find('a').attr('href', this.url);
+	/*	
 	var artHTML = '<article class="project">\n' + '	';
 	artHTML += '<img src="' + this.icon + '" class="project_icon" />\n' + '	';
 	artHTML += '<h3><a href="' + this.url + '">' + this.title + '</a></h3>\n' + '	';
 	artHTML += '<p>' + this.description + '</p>\n' + '	';
 	artHTML += '<a href="' + this.url + '">Read more &rarr;</a>\n' + '	';
-	artHTML += '\n</article>';
+	artHTML += '\n</article>';*/
+	console.log(artHTML);
 	return artHTML;
 };
 //Load raw data into post array

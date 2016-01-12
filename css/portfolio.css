@@ -75,6 +75,9 @@ h3 {
 	padding: 0 20px;
 	position: relative;
 }
+.template {
+  display: none !important;
+}
 .timestamp {
 	font-style:italic;
 	font-size:13px;
