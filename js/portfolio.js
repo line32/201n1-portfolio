@@ -22,49 +22,47 @@ portfolio.rawData = [
 		title: 'REI Digital Catalog1',
 		url: 'http://reitrips.com/#&panel1-3',
 		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
-		icon: 'images/rei.jpg'
+		icon: 'images/rei.jpg',
+		category: 'web'
 	},
 	{
 		title: 'REI Digital Catalog2',
 		url: 'http://reitrips.com/#&panel1-3',
 		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
-		icon: 'images/rei.jpg'
+		icon: 'images/rei.jpg',
+		category: 'email'
 	},
 	{
 		title: 'REI Digital Catalog3',
 		url: 'http://reitrips.com/#&panel1-3',
 		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
-		icon: 'images/rei.jpg'
+		icon: 'images/rei.jpg',
+		category: 'web'
 	}
 ];
-function Project(title, url, description, icon) {
+function Project(title, url, description, icon, category) {
 	this.title = title;
 	this.url = url;
 	this.description = description;   
 	this.icon = icon;
+	this.category = category;
 }
 
 Project.prototype.toHTML = function() {
 	var artHTML = $('article.template').clone();
 	artHTML.removeClass('template');
+	artHTML.attr('category', this.category);
 	artHTML.find('img').attr('src', this.icon);
 	artHTML.find('h3 > a').attr('href', this.url);
 	artHTML.find('h3').html(this.title);
 	artHTML.find('p').html(this.description);
 	artHTML.find('a').attr('href', this.url);
-	/*	
-	var artHTML = '<article class="project">\n' + '	';
-	artHTML += '<img src="' + this.icon + '" class="project_icon" />\n' + '	';
-	artHTML += '<h3><a href="' + this.url + '">' + this.title + '</a></h3>\n' + '	';
-	artHTML += '<p>' + this.description + '</p>\n' + '	';
-	artHTML += '<a href="' + this.url + '">Read more &rarr;</a>\n' + '	';
-	artHTML += '\n</article>';*/
 	console.log(artHTML);
 	return artHTML;
 };
 //Load raw data into post array
 $.each(portfolio.rawData, function() {
-	temp_project = new Project(this.title, this.url, this.description, this.icon);
+	temp_project = new Project(this.title, this.url, this.description, this.icon, this.category);
 	portfolio.projects.push(temp_project);	
 	console.log(temp_project);
 });
@@ -79,7 +77,37 @@ function SortByDate(a, b){
 
 
 //Add posts to html
-
 $.each(portfolio.projects, function(){
 	$('.portfolio').append(this.toHTML());
+});
+
+var portfolioView = {};
+
+portfolioView.populateFilters = function() {
+  $('article').each(function() {
+    if (!$(this).hasClass('template')) {
+      val = $(this).attr('category');
+      optionTag = '<option value="' + val + '">' + val + '</option>';
+      if ($('#category-filter option[value="' + val + '"]').length === 0) {
+        $('#category-filter').append(optionTag);
+      }
+    }
+  });
+};
+
+portfolioView.handleCategoryFilter = function() {
+  $('#category-filter').on('change', function() {
+    if ($(this).val()) {
+      $('article').hide();
+      $('article[category="' + $(this).val() + '"]').fadeIn();
+    } else {
+      $('article').fadeIn();
+      $('article.template').hide();
+    }
+  });
+};
+
+$(document).ready(function() {
+  portfolioView.populateFilters();
+  portfolioView.handleCategoryFilter();
 });
