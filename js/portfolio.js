@@ -116,5 +116,5 @@ portfolioView.handleCategoryFilter = function() {
 
 $(document).ready(function() {
 	portfolioView.populateFilters();
-	//portfolioView.handleCategoryFilter();
+	portfolioView.handleCategoryFilter();
 });
