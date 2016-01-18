@@ -14,9 +14,11 @@ $('.headshot').on('click', function() {
 	$('.portfolio').hide();
 	$('.resume').hide();
 });
+
 var portfolio = {
 	projects: []
-}
+};
+
 portfolio.rawData = [
 	{
 		title: 'REI Digital Catalog1',
@@ -53,25 +55,13 @@ Project.prototype.toHTML = function() {
 	var compiledTemplate = Handlebars.compile(projectTemplate);
 	var html = compiledTemplate(this);
 	$('.portfolio').append(html);
-	
-	/*var artHTML = $('article.template').clone();
-	artHTML.removeClass('template');
-	artHTML.attr('category', this.category);
-	artHTML.find('img').attr('src', this.icon);
-	artHTML.find('h3 > a').attr('href', this.url);
-	artHTML.find('h3').html(this.title);
-	artHTML.find('p').html(this.description);
-	artHTML.find('a').attr('href', this.url);
-	console.log(artHTML);
-	return artHTML;*/
-
 };
+
 //Load raw data into post array
 $.each(portfolio.rawData, function() {
 	temp_project = new Project(this.title, this.url, this.description, this.icon, this.category);
 	portfolio.projects.push(temp_project);	
 });
-
 
 //Array sort by date
 function SortByDate(a, b){
@@ -90,28 +80,27 @@ $.each(portfolio.projects, function(){
 var portfolioView = {};
 
 portfolioView.populateFilters = function() {
-	console.log("mytest");
 	var val, optionTag;
-  $('article').each(function() {
-      val = $(this).attr('category');
-	  console.log(val);
-      optionTag = '<option value="' + val + '">' + val + '</option>';
-      if ($('#category-filter option[value="' + val + '"]').length === 0) {
-        $('#category-filter').append(optionTag);
-      }
-  });
+	$('article').each(function() {
+		val = $(this).attr('category');
+		console.log(val);
+		optionTag = '<option value="' + val + '">' + val + '</option>';
+		if ($('#category-filter option[value="' + val + '"]').length === 0) {
+			$('#category-filter').append(optionTag);
+		}
+	});
 };
 
 portfolioView.handleCategoryFilter = function() {
-  $('#category-filter').on('change', function() {
-    if ($(this).val()) {
-      $('article').hide();
-      $('article[category="' + $(this).val() + '"]').fadeIn();
-    } else {
-      $('article').fadeIn();
-      $('article.template').hide();
-    }
-  });
+	$('#category-filter').on('change', function() {
+		if ($(this).val()) {
+			$('article').hide();
+			$('article[category="' + $(this).val() + '"]').fadeIn();
+		} else {
+			$('article').fadeIn();
+			$('article.template').hide();
+		}
+	});
 };
 
 $(document).ready(function() {
