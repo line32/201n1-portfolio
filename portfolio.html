@@ -3,174 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Casey Busch - Resume & Portfolio</title>
-<style type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/base.css" >
+<link rel="stylesheet" href="css/portfolio.css" >
+<link rel="stylesheet" href="css/layout.css" >
+<link rel="stylesheet" href="css/module.css" >
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-body {
-	line-height: 1;
-	background-color:#000000;
-	font-family:Arial, Helvetica, sans-serif;
-	color:#888888;
-	font-size:14px;
-	line-height:18px;
-	position:relative;
-}
-a {
-	color:#036;
-}
-ul {
-	margin: 3px 18px;
-	padding: 0;
-}
-h1 {
-	font-size:28px;
-	line-height:34px;
-	font-weight:bold;
-	padding:10px 0;
-}
-h2 {
-	font-size:20px;
-	line-height:26px;
-	padding:22px 0 8px 0;
-}
-h3 {
-	font-size:16px;
-	line-height:20px;
-	font-weight:bold;
-	margin:10px 0;
-	border-bottom:1px solid #006;
-}
-#container {
-	max-width:650px;
-	margin: 10px auto;
-	padding: 0 20px;
-	position: relative;
-}
-.timestamp {
-	font-style:italic;
-	font-size:13px;
-	padding-bottom:8px;
-}
-.headshot {
-	width:200px;
-	border-radius: 50%;
-	border: 1px solid #666;
-	display: block;
-	position: relative;
-	margin: 30px auto 0 auto;
-	z-index:100;
-}
-hr {
-	width:100%;
-	border:1px solid #666;
-	height:4px;
-	position:absolute;
-	top:90px;
-	z-index:-100;
-	margin:0;
-}
-[class*='col-'] {
-  float: left;
-}
-.col-1-2 {
-	width:50%;
-}
-.rt {
-	text-align:right;
-}
-.neg {
-	position: relative;
-	top:-70px;
-}
-#window {
-	width:100%;
-	clear:both;	
-}
-.intro {
-	
-}
-.resume {
-		
-}
-.portfolio {
-	text-align:center;
-}
-.portfolio > * {
-	margin: 2px 8px;
-}
-.hide {
-	display:none;
-}
-.project {
-	width:200px;
-	display: inline-block;
-}
-.project_icon {
-	width:180px;
-	border-radius: 50%;
-	border: 1px solid #666;
-	display: block;
-	margin: 30px auto 0 auto;
-}
-footer {
-	text-align:center;	
-	display: block;
-	clear: both;
-	padding-top: 15px;
-	margin-top: 15px;
-	border-top: 1px solid #666;
-}
-
-footer img {
-	display:inline-block;
-	margin: 5px;
-}
-@media (max-width: 650px) {
-#container {
-	max-width:100%;
-	margin: 10px 0;	
-}
-img {
-}
-
-
-</style>
 </head>
 
 <body>
@@ -178,10 +17,11 @@ img {
     <hr />
 	<div id="container">
     	<img src="images/me_side.jpg" class="headshot" />
-    	<section class="col-1-2 neg navres">Resume</section>
-    	<section class="col-1-2 rt neg navport">Portfolio</section>
+    	<section class="col-1-2 navres">Resume</section>
+    	<section class="col-1-2 navport">Portfolio</section>
         <section id="window">        
-        	<section class="intro">intro content</section>
+        	<section class="intro">
+            I wanted to be a photographer, changed majors to CS, fell into email development, reimagining myself as a front end developer.</section>
         	<section class="resume hide">
             Casey L. Busch
             <br /><br />
@@ -195,7 +35,7 @@ Continue to develop technical skill set with challenging projects and continued 
 			<br />
  
             <h2>QUALIFICATIONS</h2>
-            Over ten years experience working individually and as a team member on various technical and artistic projects, with particular expertise in HTML email. Several years experience servicing customers in production processes. Excellent experiences with self-management as well as working with and training others. Particular expertise in the following: 
+            <p>Over ten years experience working individually and as a team member on various technical and artistic projects, with particular expertise in HTML email. Several years experience servicing customers in production processes. Excellent experiences with self-management as well as working with and training others. Particular expertise in the following:</p> 
              
             XHTML
             CSS 
@@ -235,6 +75,17 @@ Continue to develop technical skill set with challenging projects and continued 
             Web Technology Solutions certificate - University of Washington - June 2013
 			</section>
             <section class="portfolio hide">
+
+            	<select id="category-filter">
+                	<option value="">-- Filter by Category --</option>
+            	</select>
+                <!--<article class="template project" category="">
+                    <img src="images/rei.jpg" class="project_icon">
+                    <h3><a href="http://reitrips.com/#&panel1-3">REI Digital Catalog</a></h3>
+                    <p>Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.</p>
+                    <a href="http://reitrips.com/#&panel1-3">Read more &rarr;</a>                    
+                </article>-->
+
             </section>
         </section>
     </div>
@@ -244,6 +95,15 @@ Continue to develop technical skill set with challenging projects and continued 
     </footer>
     <script src="js/html5shiv.js"></script>
     <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script type="text/x-handlebars-template" id="project">
+                <article class="project" category="{{category}}">
+                    <img src="{{icon}}" class="project_icon">
+                    <h3><a href="{{url}}">{{title}}</a></h3>
+                    <p>{{description}}</p>
+                    <a href="{{url}}">Read more &rarr;</a>                    
+                </article>
+    </script>
     <script src="js/portfolio.js"></script>
 </body>
 </html>
