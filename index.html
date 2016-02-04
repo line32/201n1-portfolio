@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Casey Busch - Resume & Portfolio</title>
+<link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/base.css" >
+<link rel="stylesheet" href="css/portfolio.css" >
+<link rel="stylesheet" href="css/layout.css" >
+<link rel="stylesheet" href="css/module.css" >
+<!--[if lt IE 9]>
+   <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+   </script>
+<![endif]-->
+</head>
+
+<body>
+
+    <hr />
+	<div id="container">
+    	<img src="images/me_side.jpg" alt="me" class="headshot" />
+    	<section class="col-1-2 navres">Resume</section>
+    	<section class="col-1-2 navport">Portfolio</section>
+        <section id="window">        
+        	<section class="intro">
+            I was born and raised in Kansas (please no Oz references). I left the plains for the beautiful Northwest over a decade ago and haven't looked back. I'm a cheese fanatic, amateur snowboarder and sour beer drinker. You might find me daydreaming of my next trip. My previous adventures have included hiking Wayna Picchu, sandboarding the dunes of Huacahina, sipping goblets of sangria on the Ramblas, and most recently snorkeling with sharks and rays.</section>
+        	<section class="resume hide">
+            Casey L. Busch
+            <br />
+            Email: Line32@gmail.com 
+            <br />
+            <h2>OBJECTIVE</h2>
+            <p>To gain employment in front-end web or email development fields using demonstrated creative, problem-solving, organizing, and self-motivation skills to:</p>
+            Contribute to and support existing processes and procedures as well as help develop improvements and enhancements to future activities.<br />
+            Support customers with technical expertise and contribute to quality control and efficiency practices with a focus on user experience.
+Continue to develop technical skill set with challenging projects and continued education.
+			<br />
+ 
+            <h2>QUALIFICATIONS</h2>
+            <p>Over ten years experience working individually and as a team member on various technical and artistic projects, with particular expertise in HTML email. Several years experience servicing customers in production processes. Excellent experiences with self-management as well as working with and training others. Particular expertise in the following:</p> 
+             
+            <ul>
+            	<li>XHTML</li>
+            	<li>CSS</li>
+            	<li>HTML optimized for email</li>
+            	<li>XSLT</li>
+            	<li>Adobe Photoshop</li>
+            	<li>Quality Service Oriented</li>
+            	<li>Javascript/jQuery</li>
+            	<li>User Centered Approach</li>
+            </ul>
+             
+            <h2>WORK EXPERIENCE</h2>
+             
+            <h4>Email Developer, Ebay Enterprise, Bellevue, WA.</h4>
+            <p>3/2015-Present<br />
+            Hand coding static and responsive HTML for promotional and transactional email campaigns for various clients including PayPal and Mattel. Setting up unsubscribe pages in the ebay enterprise(e-dialog) tool. Troubleshooting and fixing render issues with legacy and client code.</p>  
+             
+            <h4>Email & Web Developer, Responsys/Oracle, Seattle, WA.</h4>
+            <p>4/2011-3/2015<br />
+            Hand coding static and responsive HTML for promotional and transactional email campaigns for various clients including REI, Yahoo and Nordstrom. Coding dynamic content using XML/XSLT. Completed one project using Javascript/Jquery to filter trip data and display through google maps api.</p>  
+             
+            <h4>Production Specialist, Metia, Kirkland, WA.</h4>
+            <p>6/2010-3/2011<br />
+            Building and updating HTML email campaigns using paste HTML in ExactTarget for various clients including Microsoft and AT&amp;T. Coding targeted content using ampscript. Uploading and filtering list pulls as well as setting up user initiated email sends.</p>
+             
+            <h4>Associate Web Developer, Expedia, Bellevue, WA.</h4>
+            <p>3/2009-6/2010<br />
+            Building and updating custom and dynamic emails and email templates for global email campaigns using ampscript in ExactTarget. Updating the email content management system using XML, XSLT, infopath forms and minimal C#.</p>
+             
+            <h4>Associate Technical Producer, Expedia, Bellevue, WA.</h4>
+            <p>5/2008-3/2009<br />
+            Continued work on custom emails with particular emphasis on proprietary scripting language of email vendor(ampscript in ExactTarget).</p> 
+             
+            <h4>Associate Producer, Expedia, Bellevue, WA.</h4>
+            <p>3/2007-5/2008<br />
+            Building custom emails and HTML production work updating site content and creating new landing pages.</p> 
+ 
+            <h2>EDUCATION</h2>
+            UMKC, B.A. Art - Graduation With Distinction May 2003<br /> 
+            UMKC, B.A. Computer Science - Graduation With Distinction May 2003<br /> 
+            <br />
+            User-Centered Design certificate - University of Washington - March 2012<br />
+            Web Technology Solutions certificate - University of Washington - June 2013
+			</section>
+            <section class="portfolio hide">
+
+            	<select id="category-filter" class="">
+                	<option value="">-- Filter by Category --</option>
+            	</select>
+
+            </section>
+        </section>
+    </div>
+    <footer>
+    	<a href="https://www.instagram.com/efex32/"><img src="images/instagram.png" alt="Instagram" /></a>
+    	<a href="https://www.linkedin.com/in/casey-busch-83b8163?"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+    	<!--<a href="https://github.com/line32"><img src="images/github.png" alt="Github" /></a>-->
+    </footer>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script type="text/x-handlebars-template" id="project">
+                <article class="project" category="{{category}}">
+                    <a href="{{url}}" target="_blank"><img src="{{icon}}" class="project_icon"></a>
+                    <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+                    <p>{{description}}</p>
+                    <a href="{{url}}" target="_blank">See project &rarr;</a>                    
+                </article>
+    </script>
+    <script src="js/portfolio.js"></script>
+    <script src="js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+</body>
+</html>

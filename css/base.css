@@ -37,15 +37,22 @@ table {
 }
 body {
 	line-height: 1;
-	background-color:#000000;
+	background-color:#17121D;
 	font-family:Arial, Helvetica, sans-serif;
 	color:#E3D3CB;
 	font-size:14px;
 	line-height:18px;
 	position:relative;
 }
+p {
+	padding: 8px 0;
+}
 a {
-	color:#036;
+	color:#006494;
+	text-decoration:none;
+}
+strong {
+	font-weight:bold;
 }
 h2 {
 	font-size:20px;
@@ -57,14 +64,21 @@ h3 {
 	font-size:16px;
 	line-height:20px;
 	font-weight:bold;
-	margin:10px 0;
-	border-bottom:1px solid #006;
+	margin:10px;
+	border-bottom:1px solid #006494;
+}
+h4 {
+	font-size:17px;
+	line-height:22px;
+	font-weight:500;
+	color:#006494;
+	padding-top:8px;
 }
 .hide {
 	display:none;
 }
 .template {
-  display: none !important;
+	display: none !important;
 }
 hr {
 	width:100%;

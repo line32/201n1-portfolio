@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>REI Refer A Friend</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" type="text/css" href="css/rei_refer_friend.css">
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(
+		function()
+		{						
+    		$('form').attr('autocomplete', 'off');
+			$("form").validate({
+					rules: 
+					{
+						EMAIL_ADDRESS : "required email",
+						terms: "required"
+					},
+					errorContainer: ".errorMsg",
+					messages:
+					{
+						EMAIL_ADDRESS: {
+							"required" : " ",
+							"email": " "	
+						},
+						terms: {
+							"required" : " "
+						}
+					},	
+					onfocusout: false					
+				}			
+			);
+		}
+	);
+</script>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<header>
+		<a href="$clickthrough(nav_logo)$" class="logo"><img src="images/logo.gif" alt="REI&reg;" width="88" height="67" class="hide"/></a>
+		
+		<!--Start Nav-->
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li><a id="reiLink" href="$clickthrough(nav_rei)$" target="_blank">SHOP REI</a></li>
+				<li><a id="outletLink" href="$clickthrough(nav_outlet)$" target="_blank">REI-OUTLET</a></li>
+				<li><a id="advLink" href="$clickthrough(nav_travel)$" target="_blank">TRAVEL WITH REI</a></li>
+				<li><a id="dealsLink" href="$clickthrough(nav_deals)$" target="_blank">DEALS</a></li>
+				<li><a id="hikeLink" href="$clickthrough(nav_hike)$" target="_blank">CAMP &amp; HIKE</a></li>
+				<li><a id="climbLink" href="$clickthrough(nav_climb)$" target="_blank">CLIMB</a></li>
+				<li><a id="cycleLink" href="$clickthrough(nav_cycle)$" target="_blank">CYCLE</a></li>
+				<li><a id="fitnessLink" href="$clickthrough(nav_fitness)$" target="_blank">FITNESS</a></li>
+			</ul>
+		</div>
+		<!--End Nav-->
+	</header>
+	
+	<section class="signup">
+		<h1 class="hide"><img src="images/tle_lifetime.png" width="738" height="27" alt="A LIFETIME OF BENEFITS STARTS HERE" /></h1>
+		<h1 style="display:none;" class="show"><img src="images/tle_lifetimeresp.png" width="247" height="88" alt="A LIFETIME OF BENEFITS STARTS HERE" /></h1>
+		<p>When you join a community that truly shares a love for the outdoors, the perks never end. <br class="hide" />%MEMBERNAME%'s already shared that love with you&mdash;join now and you'll both get a $10 REI e-gift card.*</p>
+		<p>Fill out the form below, and we'll send <span class="block">you a code to use when purchasing </span>your membership at REI.com.</p>
+		<form method="POST" action="refer_a_friend_confirm.html">
+		<label for="FIRST_NAME"><span>FIRST NAME</span><input type="text" id="FIRST_NAME" name="FIRST_NAME" /></label>
+		<label for="LAST_NAME"><span>LAST NAME</span><input type="text" id="LAST_NAME" name="LAST_NAME" /></label>
+		<label for="EMAIL_ADDRESS" class="tf-last"><span>EMAIL</span><input type="text" id="EMAIL_ADDRESS" name="EMAIL_ADDRESS" /></label>
+		<input type="checkbox" id="terms" name="terms" /><label for="terms" class="cb-last">I agree to the Refer a Friend <a href="$clickthrough(bt_terms)$">terms and conditions</a>.</label>
+		<p class="note">Emails outside of this promotion will<br />
+		not be sent unless subscribed to.</p>
+		<input type="submit" class="submit" value="" /><label class="errorMsg" style="display:none;">Oops! Please double check <br />that your information is correct.</label>
+		</form>
+		<section class="perks">
+			<h2 class="hide"><img src="images/tle_perks.png" width="445" height="21" alt="THE PERKS OF MEMBERSHIP" /></h1>
+			<h2 style="display:none;" class="show"><img src="images/tle_perksresp.gif" width="295" height="14" alt="THE PERKS OF MEMBERSHIP" /></h2>
+			<span class="refund">
+				<img src="images/refund.png" width="145" height="115" alt="10% ANNUAL REFUND*" /><br />
+				<a href="$clickthrough(bt_refund_details)$">Get details</a>
+			</span>
+			<span class="exclusive">
+				<img src="images/exclusive.png" width="171" height="115" alt="EXCLUSIVE MEMBER DEALS" /><br />
+				<a href="$clickthrough(bt_benefits_details)$">Get details</a>			
+			</span>
+			<span class="discounts">
+				<img src="images/discounts.png" width="177" height="115" alt="IN-STORE SERVICE DISCOUNTS" /><br />
+				<a href="$clickthrough(bt_service_details)$">Get details</a>			
+			</span>
+			<span class="savings">
+				<img src="images/savings.png" width="187" height="115" alt="SAVINGS ON TRAVEL & CLASSES" /><br />
+				<a href="$clickthrough(bt_savings_details)$">Get details</a>
+			</span>
+		</section>
+	</section>
+	
+	<footer class="legal">
+	<p>&copy; 2014 Recreational Equipment, Inc. All rights reserved. REI, the REI Tree and Mountain design, Novara, and <br class="hide" />REI Adventures are trademarks of Recreational Equipment, Inc.</p>
+	<p>*This offer cannot be combined with any other offer.</p>
+		<section class="social">
+			<span class="find">Find REI on:</span> 
+			<span class="fb"><a href="$clickthrough(img_facebook)$"><img src="images/fb.gif" width="16" height="16" alt="Facebook" class="icon" />Facebook<img src="images/garw.gif" width="8" height="7" alt="" /></a></span>
+			<span class="tw"><a href="$clickthrough(img_twitter)$"><img src="images/tw.gif" width="16" height="16" alt="Twitter" class="icon" />Twitter<img src="images/garw.gif" width="8" height="7" alt="" /></a></span>
+			<span class="yt"><a href="$clickthrough(img_youtube)$"><img src="images/yt.gif" width="16" height="16" alt="YouTube" class="icon" />YouTube<img src="images/garw.gif" width="8" height="7" alt="" /></a></span>
+			<span class="fl"><a href="$clickthrough(img_flickr)$"><img src="images/fl.gif" width="16" height="16" alt="Flickr" class="icon" />Flickr<img src="images/garw.gif" width="8" height="7" alt="" /></a></span>
+		</section>
+	</footer>
+</div>
+
+</body>
+</html>

@@ -1,8 +1,7 @@
 $('.navres').on('click', function() {
 	$('.resume').fadeIn(1400);
 	$('.portfolio').hide();
-	$('.intro').hide();
-	
+	$('.intro').hide();	
 });
 $('.navport').on('click', function() {
 	$('.portfolio').fadeIn(1400);
@@ -21,24 +20,45 @@ var portfolio = {
 
 portfolio.rawData = [
 	{
-		title: 'REI Digital Catalog1',
+		title: 'Paypal statement email',
+		url: 'http://cbusch.net/work/paypal_p2p-d_received_en.html',
+		description: 'Responsive email for PayPal statements.',
+		icon: 'images/paypal_stmt.jpg',
+		category: 'email'
+	},
+	{
+		title: 'REI digital catalog map',
 		url: 'http://reitrips.com/#&panel1-3',
 		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
 		icon: 'images/rei.jpg',
 		category: 'web'
 	},
 	{
-		title: 'REI Digital Catalog2',
-		url: 'http://reitrips.com/#&panel1-3',
-		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
-		icon: 'images/rei.jpg',
+		title: 'REI promotional email',
+		url: 'http://cbusch.net/work/rei/member_tents/membertents.html',
+		description: 'Responsive promotional email for REI.',
+		icon: 'images/rei_tent.jpg',
 		category: 'email'
 	},
 	{
-		title: 'REI Digital Catalog3',
-		url: 'http://reitrips.com/#&panel1-3',
-		description: 'Integrated JSON data into google maps API and used jQuery and jQuery UI for filtering.',
-		icon: 'images/rei.jpg',
+		title: 'REI refer landing page',
+		url: 'http://cbusch.net/work/rei/refer_friend/refer_a_friend.html',
+		description: 'Responsive landing page with form and validation.',
+		icon: 'images/rei_refer.jpg',
+		category: 'web'
+	},
+	{
+		title: 'Tablespoon promotional email',
+		url: 'http://cbusch.net/work/tbsp/0811_newsletter.html',
+		description: 'Responsive promotional email for Tablespoon.',
+		icon: 'images/tbsp.jpg',
+		category: 'email'
+	},
+	{
+		title: 'Gamestop RFP',
+		url: 'http://cbusch.net/work/gamestop/gamestop_rfp.html',
+		description: 'Basic site template for RFP',
+		icon: 'images/gamestop.gif',
 		category: 'web'
 	}
 ];
@@ -63,16 +83,7 @@ $.each(portfolio.rawData, function() {
 	portfolio.projects.push(temp_project);	
 });
 
-//Array sort by date
-function SortByDate(a, b){
-	var d2 = a.publishedOn;
-	var d1 = b.publishedOn; 
-	return ((d1 < d2) ? -1 : ((d1 > d2) ? 1 : 0));
-}
-
-
 //Add posts to html
-
 $.each(portfolio.projects, function(){
 	this.toHTML();
 });
